@@ -1,4 +1,33 @@
 {
   "books": [],
-  "users": []
+  "users": [
+    {
+      "id": "ca2b",
+      "name": "Foziljon",
+      "username": "Fozil10",
+      "tel": "+998979999999",
+      "password": "1111"
+    },
+    {
+      "id": "2560",
+      "name": "Otabek Fozilov",
+      "username": "otabek22",
+      "tel": "+998975875355",
+      "password": "3"
+    },
+    {
+      "id": "94f9",
+      "name": "Yusufbek",
+      "username": "yusuf10",
+      "tel": "4",
+      "password": "4"
+    },
+    {
+      "id": "832e",
+      "name": "abdunabi",
+      "username": "abdunabi7",
+      "tel": "7",
+      "password": "7"
+    }
+  ]
 }

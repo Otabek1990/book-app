@@ -1,14 +1,22 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAddUserMutation } from "@services/usersApi";
 
 
 function Register() {
     const [addUser] = useAddUserMutation()
+    const navigate=useNavigate()
     const registerHandler = async (e) => {
         e.preventDefault();
         let forma = new FormData(e.target)
         let userData = Object.fromEntries(forma.entries())
-        await addUser(userData)
+      
+        try{
+            await addUser(userData).then(()=>navigate("/login"))
+          
+        }
+        catch(err){
+            console.log(err);
+        }
 
     }
     return (

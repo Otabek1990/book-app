@@ -1,10 +1,16 @@
-
+import AdminSidebar from './AdminSidebar'
+import AdminNavbar from './AdminNavbar'
+import AdminContent from './AdminContent'
 
 function AdminPage() {
   return (
-    <div>
-      <h1>Admin page</h1>
-    </div>
+    <div className='w-full flex '>
+        <AdminSidebar />
+         <div className='flex flex-col w-full'>
+          <AdminNavbar />
+          <AdminContent />
+         </div>
+     </div>
   )
 }
 

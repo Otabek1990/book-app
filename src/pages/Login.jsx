@@ -2,20 +2,27 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { ADMIN_LOGIN, ADMIN_PAROL } from "../constants";
+import { useUsersQuery } from "@services/usersApi";
+import { useDispatch } from "react-redux";
+import { setUserToken } from "@features/users/usersTokenSlice";
+import { setAdminToken } from "@features/admin/adminTokenSlice";
+import Button from "@components/ui/Button";
 
 
-function Login({ setAdminToken, setUserToken }) {
+function Login() {
+  const dispatch = useDispatch()
   const [isUser, setIsUser] = useState(true);
-  const [users, setUsers] = useState([])
+  const { data: users } = useUsersQuery()
   const navigate = useNavigate()
   const loginHandler = e => {
     e.preventDefault();
     const forma = new FormData(e.target);
     const { username, password } = Object.fromEntries(forma.entries())
     if (isUser) {
+
       let currentUser = users.find(item => item.username === username && item.password === password)
       if (currentUser) {
-        setUserToken(true)
+        dispatch(setUserToken(true))
         navigate("/")
         return;
       }
@@ -23,7 +30,7 @@ function Login({ setAdminToken, setUserToken }) {
       return;
     }
     if (username === ADMIN_LOGIN && password === ADMIN_PAROL) {
-      setAdminToken(true)
+      dispatch(setAdminToken(true))
       navigate("/admin");
       return;
     }
@@ -34,12 +41,22 @@ function Login({ setAdminToken, setUserToken }) {
     <div className="flex flex-col mx-auto mt-10 w-1/2 min-w-[450px] bg-slate-700 items-center justify-center py-20">
       <h1 className="mb-5 text-2xl text-white font-bold">Login</h1>
       <div className="flex gap-5 justify-center">
-        <button
-          onClick={() => setIsUser(true)}
-          className={`py-2 ${!isUser ? "bg-slate-100 text-black" : "bg-slate-900 border-4 border-white text-white"} px-3 rounded-md  text-white font-bold`}>User</button>
-        <button
-          onClick={() => setIsUser(false)}
-          className={` ${isUser ? "bg-slate-100 text-black" : "bg-slate-900  border-4 border-white text-white"} py-2 px-3 rounded-md  font-bold`}>Admin</button>
+
+        <Button
+          handleClick={() => setIsUser(true)}
+          buttonStyles={`py-2 ${!isUser ? "bg-slate-100 text-black" : "bg-slate-900 border-4 border-white text-white"} `}>
+          User
+        </Button>
+    
+
+
+        <Button
+        handleClick={() => setIsUser(false)}
+        buttonStyles={` ${isUser ? "bg-slate-100 text-black" : "bg-slate-900  border-4 border-white text-white"} `}>
+
+          Admin
+
+        </Button>
       </div>
       <div className=" mt-5 w-full px-5 flex flex-col gap-3 items-center rounded-md   ">
 
