@@ -1,33 +1,51 @@
 {
-  "books": [],
+  "books": [
+    {
+      "id": "d65d",
+      "title": "Shaytanat",
+      "price": "30000",
+      "image": "https://www.ahstatic.com/photos/1276_ho_00_p_1024x768.jpg",
+      "added": "2024-09-28T11:58:55.136Z"
+    },
+    {
+      "id": "1010",
+      "title": "terminal",
+      "price": "23000",
+      "image": "https://xabar.uz/static/crop/1/7/920__95_1747089670.jpg",
+      "added": "2024-09-28T11:59:15.427Z"
+    }
+  ],
   "users": [
     {
-      "id": "ca2b",
       "name": "Foziljon",
-      "username": "Fozil10",
-      "tel": "+998979999999",
-      "password": "1111"
+      "username": "Fozil2014",
+      "tel": "14",
+      "password": "12",
+      "added": "2024-09-28T11:51:55.148Z",
+      "id": "39f3"
     },
     {
-      "id": "2560",
-      "name": "Otabek Fozilov",
-      "username": "otabek22",
-      "tel": "+998975875355",
-      "password": "3"
+      "name": "Javohirbek",
+      "username": "Javoh6000",
+      "tel": "6",
+      "password": "9",
+      "added": "2024-09-28T11:52:18.478Z",
+      "id": "7157"
     },
     {
-      "id": "94f9",
-      "name": "Yusufbek",
+      "id": "372d",
+      "name": "Yusuf",
       "username": "yusuf10",
-      "tel": "4",
-      "password": "4"
+      "tel": "3",
+      "password": "3",
+      "added": "2024-09-28T11:01:58.797Z"
     },
     {
-      "id": "832e",
-      "name": "abdunabi",
-      "username": "abdunabi7",
-      "tel": "7",
-      "password": "7"
+      "id": "1d59",
+      "title": "test kitob",
+      "price": "20000",
+      "image": "https://xabar.uz/static/crop/1/7/920__95_1747089670.jpg",
+      "added": "2024-09-28T11:54:08.824Z"
     }
   ]
 }

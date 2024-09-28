@@ -8,7 +8,7 @@ import AdminBaskets from "./adminPages/adminBaskets"
 
 function AdminContent() {
   return (
-    <div className='flex flex-col items-center py-20 bg-gray-100 w-full h-full'>
+    <div className='flex flex-col px-10 items-center py-8 bg-gray-100 w-full h-full'>
     
         <Routes>
           <Route path={"/"} element={<AdminDashboard/>}/>
